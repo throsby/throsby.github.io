@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+@import url(https://fonts.bunny.net/css?family=arsenal:400,700,400i,700i);
+
+
+
+* {
+  font-family: "arsenal";
+  font-size: 24px;
+  --t-yellow: #f6d17a;
+  --t-red: #97463f;
+  --t-blue: #2963a5;
+  --t-black: #3f3d4a;
+  --t-grey: rgb(191, 191, 191);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.landing-page {
+  margin: 1vh;    
+  background-color: var(--t-red);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.first-tab {
+  margin: 1vh;  
+  background-color: var(--t-yellow);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.second-tab {
+  margin: 1vh;  
+  background-color: var(--t-blue);
+}
+
+.third-tab {
+  margin: 1vh;  
+  background-color: var(--t-black);
+}
+
+.landing {
+  background-color: blue;
+}
+
+.logo {
+  position: relative;
+  left: min(2vh, 1vh);
+}
+
+.header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  padding-left: 5vh;
+  height: 15vh;
+  border-bottom: .3vh solid var(--t-black);
+  background-color: var(--t-grey);
+  border-bottom-right-radius: 5vh;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  /* display: flex;   */
+  background-color: var(--t-grey);
+  top: 50vh;
 }
