@@ -13,10 +13,13 @@ function Header(){
 
     return(
     <div className="header">
-        <img className="logo" src="TWLogo.png" height={"75px"}/>Throsby Wells
+        <div>
+        <img className="logo" src="TWLogo.png" height={"75px"}/>
+        <span style={{fontSize: "30px"}}>Throsby Wells</span>
+        </div>
         <div onClick={handleClick}>Header</div>
         
-        {linksVisible && <div><Link to={"/about"}>About</Link>
+        {linksVisible && <div className="links"><Link to={"/about"}>About</Link>
         <Link to={"/"}>Home</Link>
         <Link to={"/contact"}>Contact</Link></div>}
         

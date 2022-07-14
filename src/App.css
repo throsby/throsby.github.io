@@ -43,6 +43,7 @@
 
 .header {
   display: flex;
+  /* float: left; */
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
@@ -51,6 +52,13 @@
   border-bottom: .3vh solid var(--t-black);
   background-color: var(--t-grey);
   border-bottom-right-radius: 5vh;
+
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.links {
+  text-decoration: none;
 }
 
 .footer {
