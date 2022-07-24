@@ -44,3 +44,16 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Working On An Update?
+git add .
+git commit -m "..."
+git push
+
+This sends to the "main" branch. 
+
+## Want to change the published website?
+yarn deploy
+
+This runs the alias that's in the package.json. It builds the code and pushes to the 'github-pages' branch with static assets
