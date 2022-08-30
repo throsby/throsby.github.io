@@ -1,6 +1,6 @@
 function Footer(){
     
-    return (<div className="footer">Footer</div>)
+    return (<div className="footer">Still growing, by Throsby · 🌱 </div>)
 }
 
 export default Footer;

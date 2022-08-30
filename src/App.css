@@ -1,7 +1,5 @@
 @import url(https://fonts.bunny.net/css?family=arsenal:400,700,400i,700i);
 
-
-
 * {
   font-family: "arsenal";
   font-size: 24px;
@@ -38,27 +36,104 @@
 
 .logo {
   position: relative;
-  left: min(2vh, 1vh);
+
+  /* left: min(2vh, 1vh); */
+  height: 75px;
 }
 
 .header {
   display: flex;
-  
+  position: relative;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  flex-basis: auto;
+  /* justify-content: auto; */
+  
   padding-left: 5vh;
+  padding-right: 5vh;
   height: 15vh;
   border-bottom: .3vh solid var(--t-black);
-  background-color: var(--t-grey);
+  /* background-color: var(--t-grey); */
   border-bottom-right-radius: 5vh;
-
+  /* z-index: -2; */
   overflow: hidden;
   text-decoration: none;
 }
 
+.header-left{
+  display: flex;
+  font-size: 30px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.header-left > * {
+  /* Spacing of things in the left part of the header */
+  padding: .5vh;
+}
+
+.header-right {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  
+  justify-content: flex-start;  
+}
+
+.hamburger {
+  height: 45px;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.header-button {
+  display: flex;
+  margin-left: auto;
+}
+
 .links {
+  position: relative;
+  display: flex;
+  align-items: right;
+  justify-content: flex;
+
+}
+
+a {
+  color: var(--t-black);
   text-decoration: none;
+}
+
+.links > a {
+  position: relative;
+  margin: .25vh;
+  padding: .5vh;
+  border-radius: 1vh;
+  border: .25vh solid var(--t-black);
+}
+
+a[class*="header-"]::before {
+  content: "";
+  /* border-radius: 1vh; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--t-blue);
+  transition: transform .5s ease;
+  z-index: -1;
+  transform: translateX(-100%);
+}
+
+div.links > a:hover::before {
+  transform: translateY(0);
+}
+
+[class|=header]{
+  overflow: hidden;
 }
 
 .footer {
