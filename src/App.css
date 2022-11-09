@@ -6,12 +6,12 @@
   font-size: 24px;
   --t-yellow: #f6d17a;
   --t-red: #97463f;
-  --t-blue: #2963a5;
+  --t-blue: 41, 99, 165;
   --t-black: #3f3d4a;
   --t-grey: rgb(191, 191, 191);
   --t-green: #8EC469;
-  --t-border-green: #739F54;
-  --t-cheerio-red: #BB1C53;
+  --t-border-green: 115, 159, 84;
+  --t-cheerio-red: 187, 28, 83;
 }
 
 
@@ -182,6 +182,16 @@ div.links > a:hover::before {
   width: 70%;
 }
 
+.bubbles {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /* left: -50px; */
+  /* top: -50px; */
+  height: 100%;
+  width: 100%;
+}
+
 .footer {
   position: relative;
   display: flex;  
@@ -189,7 +199,7 @@ div.links > a:hover::before {
   /* top: 50vh; */
 }
 
-@keyframes myOrbit {
+@keyframes myOrbit1 {
   from {
       transform: rotate(0deg) translateX(175px) rotate(0deg);
     }
@@ -199,14 +209,98 @@ div.links > a:hover::before {
     }
 }
 
-.github-bubble {
-  position: absolute;
-  border: var(--t-cheerio-red) 10px solid;
-  background-color: white;
-  font-size: small;
-  border-radius: 50%;
-  height: 75px;
-  width: 75px;
-  animation: myOrbit 20s linear infinite;
+@keyframes myOrbit2 {
+  from {
+    transform: rotate(90deg) translateX(175px) rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(450deg) translateX(175px) rotate(-450deg);
+  }
 }
 
+@keyframes myOrbit3 {
+  from {
+    transform: rotate(180deg) translateX(175px) rotate(-180deg);
+  }
+
+  to {
+    transform: rotate(540deg) translateX(175px) rotate(-540deg);
+  }
+}
+
+@keyframes myOrbit4 {
+  from {
+    transform: rotate(270deg) translateX(175px) rotate(-270deg);
+  }
+
+  to {
+    transform: rotate(630deg) translateX(175px) rotate(-630deg);
+  }
+}
+
+.project2-bubble{
+  position: absolute;
+  display: flex;
+  top: calc(34%);
+  left: calc(34%);
+  border: rgba(var(--t-blue), 1.0) 15px solid;
+  background-color: white;
+  font-size: small;
+  text-align: center;
+  border-radius: 75px;
+  height: 75px;
+  width: 75px;
+  animation: myOrbit1 20s linear infinite;
+}
+
+.project1-bubble {
+  position: absolute;
+  display: flex;
+  top: calc(34%);
+  left: calc(34%);
+  border: rgba(var(--t-blue), 0.7) 15px solid;
+  background-color: white;
+  font-size: small;
+  text-align: center;
+  border-radius: 75px;
+  height: 75px;
+  width: 75px;
+  animation: myOrbit2 20s linear infinite;
+}
+
+.linkedin-bubble {
+  position: absolute;
+  display: flex;
+  top: calc(34%);
+  left: calc(34%);
+  border: rgba(var(--t-blue), 1.0) 15px solid;
+  background-color: white;
+  font-size: small;
+  text-align: center;
+  border-radius: 75px;
+  height: 75px;
+  width: 75px;
+  animation: myOrbit3 20s linear infinite;
+}
+
+.github-bubble {
+  position: absolute;
+  display: flex;
+  top: calc(34%);
+  left: calc(34%);
+  border: rgba(var(--t-blue), .7) 15px solid;
+  background-color: white;
+  font-size: small;
+  text-align: center;
+  border-radius: 75px;
+  height: 75px;
+  width: 75px;
+  animation: myOrbit4 20s linear infinite;
+  transition: border-color .1s linear;
+}
+
+[class$=bubble]:hover {
+  border: rgba(var(--t-cheerio-red), 1.0) 15px solid;
+  cursor: pointer;
+}
