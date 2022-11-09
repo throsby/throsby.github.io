@@ -1,15 +1,26 @@
 function LandingPage(){
 
     return(
-    <>
-        {/* <div className="landing-page">LandingPage</div> */}
-        <div className="first-tab">We're still under construction!</div>
+    <div className="landing-page">
+        <div className="leftSide">
 
-        <img src="traffic-cone.png"/>
-        {/* <div className="second-tab">Tab</div> */}
-        {/* <div className="third-tab">Tab</div> */}
+        </div>
+        <div className="vl">
 
-    </>
+        </div>
+        <div className="rightSide"> 
+            <div className="outer-circle">
+                    <div className="github-bubble">
+                        Github Link
+                    </div>
+                    <div className="inner-circle">
+
+                    </div>
+            </div>
+        </div>
+        
+
+    </div>
 )
 }
 

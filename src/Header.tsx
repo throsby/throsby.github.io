@@ -11,9 +11,9 @@ function Header(){
     }
 
     return(
-    <div className="header">
+        <div className="header" >
         <div className="header-left">
-        <Link className="header-logo" to={"/"}><img className="logo" src="TWLogo.png"/></Link>
+        <Link className="header-logo" to={"/"}><img className="logo" src="quad-cheerio-red.png"/></Link>
         <div className="my-name">Throsby Wells</div>
         </div>
         <div className="header-right">

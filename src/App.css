@@ -1,6 +1,7 @@
 @import url(https://fonts.bunny.net/css?family=arsenal:400,700,400i,700i);
 
 * {
+  /* outline: lime 1px solid; */
   font-family: "arsenal";
   font-size: 24px;
   --t-yellow: #f6d17a;
@@ -8,12 +9,11 @@
   --t-blue: #2963a5;
   --t-black: #3f3d4a;
   --t-grey: rgb(191, 191, 191);
+  --t-green: #8EC469;
+  --t-border-green: #739F54;
+  --t-cheerio-red: #BB1C53;
 }
 
-.landing-page {
-  margin: 1vh;    
-  background-color: var(--t-red);
-}
 
 .first-tab {
   margin: 1vh;  
@@ -76,7 +76,7 @@
   position: relative;
   display: flex;
   margin-left: auto;
-  
+  gap: .75vh;
   justify-content: flex-start;  
 }
 
@@ -98,7 +98,7 @@
   display: flex;
   align-items: right;
   justify-content: flex;
-
+  gap: .5vh;
 }
 
 a {
@@ -108,8 +108,7 @@ a {
 
 .links > a {
   position: relative;
-  margin: .25vh;
-  padding: .5vh;
+  padding: .75vh;
   border-radius: 1vh;
   border: .25vh solid var(--t-black);
 }
@@ -120,24 +119,94 @@ a[class*="header-"]::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 110%;
   height: 100%;
-  background-color: var(--t-blue);
+  background-color: var(--t-green);
   transition: transform .5s ease;
   z-index: -1;
   transform: translateX(-100%);
 }
 
 div.links > a:hover::before {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 [class|=header]{
   overflow: hidden;
 }
 
-.footer {
-  /* display: flex;   */
-  background-color: var(--t-grey);
-  top: 50vh;
+/* .leftSide {} */
+
+.landing-page {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
+
+.vl {
+  position: relative;
+  left: 33%;
+  /* top: 10%; */
+  width: 0px;
+  height: 80vh;
+  border: var(--t-grey) solid 1px;
+}
+
+.rightSide {
+  position: relative;
+  left: 33%;
+  height: min(1600px, 100vh);
+  width: 67%;
+  /* padding: 5%; */
+  display: flex;
+  justify-content: center;
+}
+
+.outer-circle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20%;
+  border-radius: 50%;
+  height: max(300px, 35vh);
+  width: max(300px, 35vh);
+  background-color: #8EC469;
+}
+
+.inner-circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  height: 70%;
+  width: 70%;
+}
+
+.footer {
+  position: relative;
+  display: flex;  
+  background-color: var(--t-grey);
+  /* top: 50vh; */
+}
+
+@keyframes myOrbit {
+  from {
+      transform: rotate(0deg) translateX(175px) rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg) translateX(175px) rotate(-360deg);
+    }
+}
+
+.github-bubble {
+  position: absolute;
+  border: var(--t-cheerio-red) 10px solid;
+  background-color: white;
+  font-size: small;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  animation: myOrbit 20s linear infinite;
+}
+
