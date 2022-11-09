@@ -1,7 +1,8 @@
 @import url(https://fonts.bunny.net/css?family=arsenal:400,700,400i,700i);
 
+
 * {
-  /* outline: lime 1px solid; */
+  outline: lime 1px solid;
   font-family: "arsenal";
   font-size: 24px;
   --t-yellow: #f6d17a;
@@ -36,7 +37,6 @@
 
 .logo {
   position: relative;
-
   /* left: min(2vh, 1vh); */
   height: 75px;
 }
@@ -140,42 +140,46 @@ div.links > a:hover::before {
 .landing-page {
   position: relative;
   display: flex;
+  height: 100vh;
+  flex-direction: row;
   align-items: center;
 }
 
 .vl {
   position: relative;
-  left: 33%;
+  left: calc(1*100vw/3);
   /* top: 10%; */
   width: 0px;
+  gap: 10vh;
   height: 80vh;
   border: var(--t-grey) solid 1px;
 }
 
 .rightSide {
   position: relative;
-  left: 33%;
-  height: min(1600px, 100vh);
-  width: 67%;
-  /* padding: 5%; */
+  left: calc(1*100vw/3);
+  width: calc(2*100vw/3);
+  height: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
 .outer-circle {
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 20%;
+  top: 25vh;
   border-radius: 50%;
-  height: max(300px, 35vh);
-  width: max(300px, 35vh);
+  --outer-circle-circumference: 35vh;
+  height: var(--outer-circle-circumference);
+  width: var(--outer-circle-circumference);
   background-color: #8EC469;
 }
 
 .inner-circle {
-  position: absolute;
+  position: relative;
   border-radius: 50%;
   background-color: #fff;
   height: 70%;
@@ -183,124 +187,123 @@ div.links > a:hover::before {
 }
 
 .bubbles {
-  position: relative;
+  /* In order for inner-circle and bubbles to be on the same center, bubbles must be position: absolute */
+  position: absolute;
   display: flex;
   flex-direction: row;
-  /* left: -50px; */
-  /* top: -50px; */
-  height: 100%;
-  width: 100%;
+  --circumference-bubbles: calc(var(--outer-circle-circumference)*2);
+  border-radius: 50%;
+  height: var(--circumference-bubbles);
+  width: var(--circumference-bubbles);
 }
 
 .footer {
   position: relative;
-  display: flex;  
+  display: flex;
   background-color: var(--t-grey);
   /* top: 50vh; */
 }
 
 @keyframes myOrbit1 {
   from {
-      transform: rotate(0deg) translateX(175px) rotate(0deg);
+      transform: rotate(0deg) translateX(calc(var(--outer-circle-circumference))) rotate(0deg);
     }
   
     to {
-      transform: rotate(360deg) translateX(175px) rotate(-360deg);
+      transform: rotate(360deg) translateX(calc(var(--outer-circle-circumference))) rotate(-360deg);
     }
 }
 
 @keyframes myOrbit2 {
   from {
-    transform: rotate(90deg) translateX(175px) rotate(-90deg);
+    transform: rotate(90deg) translateX(calc(var(--outer-circle-circumference))) rotate(-90deg);
   }
 
   to {
-    transform: rotate(450deg) translateX(175px) rotate(-450deg);
+    transform: rotate(450deg) translateX(calc(var(--outer-circle-circumference))) rotate(-450deg);
   }
 }
 
 @keyframes myOrbit3 {
   from {
-    transform: rotate(180deg) translateX(175px) rotate(-180deg);
+    transform: rotate(180deg) translateX(calc(var(--outer-circle-circumference))) rotate(-180deg);
   }
 
   to {
-    transform: rotate(540deg) translateX(175px) rotate(-540deg);
+    transform: rotate(540deg) translateX(calc(var(--outer-circle-circumference))) rotate(-540deg);
   }
 }
 
 @keyframes myOrbit4 {
   from {
-    transform: rotate(270deg) translateX(175px) rotate(-270deg);
+    transform: rotate(270deg) translateX(calc(var(--outer-circle-circumference))) rotate(-270deg);
   }
 
   to {
-    transform: rotate(630deg) translateX(175px) rotate(-630deg);
+    transform: rotate(630deg) translateX(calc(var(--outer-circle-circumference))) rotate(-630deg);
   }
 }
 
+[class$="-bubble"]{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: calc(2*35.5vh/3);
+    left: calc(2*35.5vh/3);
+    border-style: solid;
+    border-width: 25px;
+    background-color: white;
+    font-size: small;
+    text-align: center;
+    justify-content: center;
+    --bubble-circumference: calc(var(--outer-circle-circumference)/2);
+    border-radius: 100%;
+    width: var(--bubble-circumference);
+    height: var(--bubble-circumference);
+}
+
 .project2-bubble{
-  position: absolute;
-  display: flex;
-  top: calc(34%);
-  left: calc(34%);
-  border: rgba(var(--t-blue), 1.0) 15px solid;
-  background-color: white;
-  font-size: small;
-  text-align: center;
-  border-radius: 75px;
-  height: 75px;
-  width: 75px;
+  border-color: rgba(var(--t-blue), 1.0);
   animation: myOrbit1 20s linear infinite;
 }
 
 .project1-bubble {
-  position: absolute;
-  display: flex;
-  top: calc(34%);
-  left: calc(34%);
-  border: rgba(var(--t-blue), 0.7) 15px solid;
-  background-color: white;
-  font-size: small;
-  text-align: center;
-  border-radius: 75px;
-  height: 75px;
-  width: 75px;
+  border-color: rgba(var(--t-blue), 0.7);
   animation: myOrbit2 20s linear infinite;
 }
 
 .linkedin-bubble {
-  position: absolute;
-  display: flex;
-  top: calc(34%);
-  left: calc(34%);
-  border: rgba(var(--t-blue), 1.0) 15px solid;
-  background-color: white;
-  font-size: small;
-  text-align: center;
-  border-radius: 75px;
-  height: 75px;
-  width: 75px;
+  border-color: rgba(var(--t-blue), 1.0);
   animation: myOrbit3 20s linear infinite;
 }
 
 .github-bubble {
-  position: absolute;
-  display: flex;
-  top: calc(34%);
-  left: calc(34%);
-  border: rgba(var(--t-blue), .7) 15px solid;
-  background-color: white;
-  font-size: small;
-  text-align: center;
-  border-radius: 75px;
-  height: 75px;
-  width: 75px;
+  border-color: rgba(var(--t-blue), 0.7);
   animation: myOrbit4 20s linear infinite;
-  transition: border-color .1s linear;
+  /* transition: border-color .1s linear; */
 }
 
-[class$=bubble]:hover {
+.bubbles:hover * {
+  /* animation: none; */
+  animation-play-state: paused;
+}
+
+.github-bubble:hover {
+  border: rgba(var(--t-cheerio-red), 1.0) 15px solid;
+  cursor: pointer;
+}
+
+.linkedin-bubble:hover {
+  border: rgba(var(--t-cheerio-red), 1.0) 15px solid;
+  cursor: pointer;
+}
+
+.project1-bubble:hover {
+  border: rgba(var(--t-cheerio-red), 1.0) 15px solid;
+  cursor: pointer;
+}
+
+.project2-bubble:hover {
   border: rgba(var(--t-cheerio-red), 1.0) 15px solid;
   cursor: pointer;
 }
