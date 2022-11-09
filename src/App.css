@@ -170,7 +170,7 @@ div.links > a:hover::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 25vh;
+  top: 25%;
   border-radius: 50%;
   --outer-circle-circumference: 35vh;
   height: var(--outer-circle-circumference);
@@ -206,104 +206,108 @@ div.links > a:hover::before {
 
 @keyframes myOrbit1 {
   from {
-      transform: rotate(0deg) translateX(calc(var(--outer-circle-circumference))) rotate(0deg);
-    }
-  
-    to {
-      transform: rotate(360deg) translateX(calc(var(--outer-circle-circumference))) rotate(-360deg);
-    }
+    transform: rotate(0deg) translateX(calc(var(--outer-circle-circumference)*0.5)) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(calc(var(--outer-circle-circumference)*0.5)) rotate(-360deg);
+  }
 }
 
 @keyframes myOrbit2 {
   from {
-    transform: rotate(90deg) translateX(calc(var(--outer-circle-circumference))) rotate(-90deg);
+    transform: rotate(90deg) translateX(calc(var(--outer-circle-circumference)*0.5)) rotate(-90deg);
   }
 
   to {
-    transform: rotate(450deg) translateX(calc(var(--outer-circle-circumference))) rotate(-450deg);
+    transform: rotate(450deg) translateX(calc(var(--outer-circle-circumference)*0.5)) rotate(-450deg);
   }
 }
 
 @keyframes myOrbit3 {
   from {
-    transform: rotate(180deg) translateX(calc(var(--outer-circle-circumference))) rotate(-180deg);
+    transform: rotate(180deg) translateX(calc(var(--outer-circle-circumference)*0.5)) rotate(-180deg);
   }
 
   to {
-    transform: rotate(540deg) translateX(calc(var(--outer-circle-circumference))) rotate(-540deg);
+    transform: rotate(540deg) translateX(calc(var(--outer-circle-circumference)*0.5)) rotate(-540deg);
   }
 }
 
 @keyframes myOrbit4 {
   from {
-    transform: rotate(270deg) translateX(calc(var(--outer-circle-circumference))) rotate(-270deg);
+    transform: rotate(270deg) translateX(calc(var(--outer-circle-circumference)*0.5)) rotate(-270deg);
   }
 
   to {
-    transform: rotate(630deg) translateX(calc(var(--outer-circle-circumference))) rotate(-630deg);
+    transform: rotate(630deg) translateX(calc(var(--outer-circle-circumference)*0.5)) rotate(-630deg);
   }
 }
 
 [class$="-bubble"]{
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
-    top: calc(2*35.5vh/3);
-    left: calc(2*35.5vh/3);
+    --half: 50%;
+    top: calc(40%);
+    left: calc(50%);
     border-style: solid;
     border-width: 25px;
     background-color: white;
     font-size: small;
     text-align: center;
     justify-content: center;
-    --bubble-circumference: calc(var(--outer-circle-circumference)/2);
+    --bubble-circumference: calc(var(--outer-circle-circumference)/3);
     border-radius: 100%;
     width: var(--bubble-circumference);
     height: var(--bubble-circumference);
 }
 
 .project2-bubble{
+  z-index: 1;
   border-color: rgba(var(--t-blue), 1.0);
   animation: myOrbit1 20s linear infinite;
 }
 
 .project1-bubble {
+  z-index: 2;
   border-color: rgba(var(--t-blue), 0.7);
-  animation: myOrbit2 20s linear infinite;
+  /* animation: myOrbit2 20s linear infinite; */
 }
 
 .linkedin-bubble {
+  z-index: 3;
   border-color: rgba(var(--t-blue), 1.0);
-  animation: myOrbit3 20s linear infinite;
+  /* animation: myOrbit3 20s linear infinite; */
 }
 
 .github-bubble {
+  z-index: 4;
   border-color: rgba(var(--t-blue), 0.7);
-  animation: myOrbit4 20s linear infinite;
-  /* transition: border-color .1s linear; */
+  /* animation: myOrbit4 20s linear infinite; */
 }
 
 .bubbles:hover * {
-  /* animation: none; */
-  animation-play-state: paused;
+  animation: none;
+  /* animation-play-state: paused; */
 }
 
 .github-bubble:hover {
-  border: rgba(var(--t-cheerio-red), 1.0) 15px solid;
+  border: rgba(var(--t-cheerio-red), 1.0) 25px solid;
   cursor: pointer;
 }
 
 .linkedin-bubble:hover {
-  border: rgba(var(--t-cheerio-red), 1.0) 15px solid;
+  border: rgba(var(--t-cheerio-red), 1.0) 25px solid;
   cursor: pointer;
 }
 
 .project1-bubble:hover {
-  border: rgba(var(--t-cheerio-red), 1.0) 15px solid;
+  border: rgba(var(--t-cheerio-red), 1.0) 25px solid;
   cursor: pointer;
 }
 
 .project2-bubble:hover {
-  border: rgba(var(--t-cheerio-red), 1.0) 15px solid;
+  border: rgba(var(--t-cheerio-red), 1.0) 25px solid;
   cursor: pointer;
 }
