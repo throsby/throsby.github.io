@@ -6,9 +6,22 @@ function LandingPage(){
     <div className="landing-page">
         <div className="leftSide">
             <div className="short-form-resume">
-                <div className="item-1"></div>
-                <div className="item-2"></div>
-                <div className="item-3"></div>
+                <div className="resume-heading">Short Form Resume</div>
+                <div className="item-1">
+                    <p>Peace Corps - 2018 to 2020</p>
+                    <p>Blah blah agriculture chicken training blah blah</p>
+                </div>
+                <div className="item-2">
+                    <p>Americorps - 2016 to 2017</p>
+                    <p>Wichita, Kansas is named for a sneeze Throsby once sneezed. It was that loud.</p>
+                </div>
+                <div className="item-3">
+                    <p>Please Hire me - Sooner to Later</p>
+                    <p>I'll do anything, I'll become a champion flamenco dancer for it</p>
+                </div>
+                <div className="item-4">
+                    <p>Throsby will win the Steve Martin prize for Banjo excellence only by working hard at it. Also by buying and playing the banjo. Actually mostly that.</p>
+                </div>
             </div>
         </div>
         <div className="vl"/>

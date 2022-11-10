@@ -16,7 +16,6 @@
   --t-cheerio-orange: 221, 119, 52;
   --t-cheerio-purple: 162, 88, 142;
   --t-cheerio-github: 3, 119, 237;
-  /* --t-cheerio-linkedin: ; */
   --t-cheerio-lemon: 218, 237, 34;
 }
 
@@ -146,19 +145,44 @@ div.links > a:hover::before {
 }
 
 .leftSide {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
+  /* flex-wrap: wrap; */
   align-items: center;
+
+  top: 2em;
   height: 100vh;
-  width: calc(100%/3);
+  gap: 2em;
+  left: max(11vw, 7em);
+  width: 0em;
 }
 
-[class^="item"]{
+.resume-heading {
+  top: 1em;
+  text-indent: 5em;
+}
+
+[class^="item"] {
+  flex: auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
   border: #3f3d4a solid 2px;
-  width: 80%;
-  height: 100px;
+  
+  left: 1.5em;
+  border-radius: 1em;
+  width: 15em;
+  height: 5em;
+  margin: 1em 0em;
+}
+
+[class^="item"] > p {
+  text-indent: 1em;
+  font-size: medium;
+  margin: .5em;
+  color: black;
+  word-wrap: none;
 }
 
 .landing-page {
@@ -171,7 +195,7 @@ div.links > a:hover::before {
 
 .vl {
   position: relative;
-  left: calc(1*100vw/3);
+  left: max(calc(1*100vw/3),17.2em);
   /* top: 10%; */
   width: 0px;
   height: 80vh;
@@ -180,7 +204,7 @@ div.links > a:hover::before {
 
 .rightSide {
   position: relative;
-  left: calc(1*100vw/3);
+  left: max(calc(1*100vw/3), 15em);
   width: calc((196.5*100vw/300));
   height: 100%;
   display: flex;
@@ -230,41 +254,41 @@ div.links > a:hover::before {
 
 @keyframes myOrbit1 {
   from {
-    transform: rotate(0deg) translateX(var(--translation)) rotate(0deg);
+    transform: rotate(45deg) translateX(var(--translation)) rotate(-45deg);
   }
 
   to {
-    transform: rotate(360deg) translateX(var(--translation)) rotate(-360deg);
+    transform: rotate(405deg) translateX(var(--translation)) rotate(-405deg);
   }
 }
 
 @keyframes myOrbit2 {
   from {
-    transform: rotate(90deg) translateX(var(--translation)) rotate(-90deg);
+    transform: rotate(135deg) translateX(var(--translation)) rotate(-135deg);
   }
 
   to {
-    transform: rotate(450deg) translateX(var(--translation)) rotate(-450deg);
+    transform: rotate(495deg) translateX(var(--translation)) rotate(-495deg);
   }
 }
 
 @keyframes myOrbit3 {
-  from {
-    transform: rotate(180deg) translateX(var(--translation)) rotate(-180deg);
+  0% {
+    transform: rotate(225deg) translateX(var(--translation)) rotate(-225deg);
   }
 
-  to {
-    transform: rotate(540deg) translateX(var(--translation)) rotate(-540deg);
+  100% {
+    transform: rotate(585deg) translateX(var(--translation)) rotate(-585deg);
   }
 }
 
 @keyframes myOrbit4 {
   from {
-    transform: rotate(270deg) translateX(var(--translation)) rotate(-270deg);
+    transform: rotate(315deg) translateX(var(--translation)) rotate(-315deg);
   }
 
   to {
-    transform: rotate(630deg) translateX(var(--translation)) rotate(-630deg);
+    transform: rotate(675deg) translateX(var(--translation)) rotate(-675deg);
   }
 }
 
@@ -275,7 +299,7 @@ div.links > a:hover::before {
     top: calc((var(--circumference-bubbles) * 85 / 100 ));
     left: calc((var(--circumference-bubbles) * 85 / 100 ));
     outline-style: solid;
-    outline-width: 30px;/* border-width: 30px; */
+    outline-width: 30px;
     background-color: white;
     font-size: small;
     text-align: center;
@@ -307,8 +331,9 @@ div.links > a:hover::before {
 }
 
 .bubbles:hover * {
-  /* animation: none; */
   animation-play-state: paused;
+  /* animation-iteration-count: 1; */
+  animation-fill-mode: forwards;
 }
 
 .github-bubble:hover {
