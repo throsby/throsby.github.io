@@ -11,13 +11,19 @@
   --t-black: #3f3d4a;
   --t-grey: rgb(191, 191, 191);
   --t-green: #8EC469;
-  --t-border-green: 115, 159, 84;
+  --t-border-green: 142, 196, 105;
   --t-cheerio-red: 187, 28, 83;
   --t-cheerio-orange: 221, 119, 52;
   --t-cheerio-purple: 162, 88, 142;
   --t-cheerio-github: 3, 119, 237;
   --t-cheerio-lemon: 218, 237, 34;
+  
 }
+
+#root {
+  background-color: rgba(var(--t-border-green), .05);
+}
+
 
 .first-tab {
   margin: 1vh;  
@@ -55,7 +61,7 @@
   padding-right: 5vh;
   height: 15vh;
   border-bottom: .3vh solid var(--t-black);
-  /* background-color: var(--t-grey); */
+  background-color: rgba(var(--t-border-green),1);
   border-bottom-right-radius: 5vh;
   /* z-index: -2; */
   overflow: hidden;
@@ -144,18 +150,27 @@ div.links > a:hover::before {
   overflow: hidden;
 }
 
+.landing-page {
+  position: relative;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: calc(1*100vw/3) 0px calc(2*100vw/3);
+  height: 100vh;
+  /* flex-direction: row; */
+  /* align-items: center; */
+}
+
 .leftSide {
   position: relative;
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   align-items: center;
 
   top: 2em;
   height: 100vh;
-  gap: 2em;
-  left: max(11vw, 7em);
-  width: 0em;
+  /* gap: 2em; */
+  /* left: max(1vw, 7em); */
+  /* width: 0em; */
 }
 
 .resume-heading {
@@ -164,17 +179,16 @@ div.links > a:hover::before {
 }
 
 [class^="item"] {
-  flex: auto;
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+  /* flex-direction: column; */
   border: #3f3d4a solid 2px;
-  
-  left: 1.5em;
   border-radius: 1em;
-  width: 15em;
-  height: 5em;
-  margin: 1em 0em;
+  width: calc(0.8 * 100vw/3);
+  /* height: 5em; */
+  margin-top: .5em;
+  margin-left: .5em;
+  left: min(calc(0.4 * 100vw/3), .5em);
 }
 
 [class^="item"] > p {
@@ -185,28 +199,20 @@ div.links > a:hover::before {
   word-wrap: none;
 }
 
-.landing-page {
-  position: relative;
-  display: flex;
-  height: 100vh;
-  flex-direction: row;
-  align-items: center;
-}
-
 .vl {
   position: relative;
-  left: max(calc(1*100vw/3),17.2em);
-  /* top: 10%; */
+  /* left: max(17.2em); */
+  top: 10%;
   width: 0px;
-  height: 80vh;
+  height: 80%;
   border: var(--t-grey) solid 1px;
 }
 
 .rightSide {
   position: relative;
-  left: max(calc(1*100vw/3), 15em);
-  width: calc((196.5*100vw/300));
-  height: 100%;
+  /* left: max(calc(1*100vw/3), 15em); */
+  /* width: calc((196.5*100vw/300)); */
+  /* height: 100%; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -237,19 +243,11 @@ div.links > a:hover::before {
 .bubbles {
   /* In order for inner-circle and bubbles to be on the same center, bubbles must be position: absolute */
   position: absolute;
-  display: flex;
-  flex-direction: row;
-  --circumference-bubbles: calc(var(--outer-circle-circumference)*2);
+  --circumference-bubbles: calc(var(--outer-circle-circumference));
   border-radius: 50%;
   --translation: calc(var(--outer-circle-circumference)* 110 / 100);
   height: var(--circumference-bubbles);
   width: var(--circumference-bubbles);
-}
-
-.footer {
-  position: relative;
-  display: flex;
-  background-color: var(--t-grey);
 }
 
 @keyframes myOrbit1 {
@@ -292,41 +290,54 @@ div.links > a:hover::before {
   }
 }
 
+.bubble-outer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 [class$="-bubble"] {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: calc((var(--circumference-bubbles) * 85 / 100 ));
-    left: calc((var(--circumference-bubbles) * 85 / 100 ));
-    outline-style: solid;
-    outline-width: 30px;
     background-color: white;
     font-size: small;
     text-align: center;
     justify-content: center;
-    --bubble-circumference: calc(var(--outer-circle-circumference)/3);
+    --bubble-circumference: calc(6/7*(var(--outer-circle-circumference)));
     border-radius: 100%;
     width: var(--bubble-circumference);
     height: var(--bubble-circumference);
 }
 
+[class$="-bubble"]:nth-child(even) {
+  background-color: rgba(var(--t-blue), 1.0);
+}
+
+[class$="-bubble"]:nth-child(odd) {
+  background-color: rgba(var(--t-blue), 0.8);
+}
+
 .project2-bubble{
-  outline-color: rgba(var(--t-blue), 1.0);
+  /* outline-color: rgba(var(--t-blue), 1.0); */
   animation: myOrbit1 20s linear infinite;
 }
 
 .project1-bubble {
-  outline-color: rgba(var(--t-blue), 0.8);
+  /* outline-color: rgba(var(--t-blue), 0.8); */
   animation: myOrbit2 20s linear infinite;
 }
 
 .linkedin-bubble {
-  outline-color: rgba(var(--t-blue), 1.0);
+  /* outline-color: rgba(var(--t-blue), 1.0); */
   animation: myOrbit3 20s linear infinite;
 }
 
 .github-bubble {
-  outline-color: rgba(var(--t-blue), 0.8);
+  /* outline-color: rgba(var(--t-blue), 0.8); */
   animation: myOrbit4 20s linear infinite;
 }
 
@@ -354,4 +365,10 @@ div.links > a:hover::before {
 .project2-bubble:hover {
   outline: rgba(var(--t-cheerio-purple), 1.0) 30px solid;
   cursor: pointer;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  background-color: var(--t-grey);
 }
