@@ -2,7 +2,7 @@
 
 
 * {
-  outline: lime 1px solid;
+  /* outline: lime 1px solid; */
   font-family: "arsenal";
   font-size: 24px;
   --t-yellow: #f6d17a;
@@ -13,8 +13,12 @@
   --t-green: #8EC469;
   --t-border-green: 115, 159, 84;
   --t-cheerio-red: 187, 28, 83;
+  --t-cheerio-orange: 221, 119, 52;
+  --t-cheerio-purple: 162, 88, 142;
+  --t-cheerio-github: 3, 119, 237;
+  /* --t-cheerio-linkedin: ; */
+  --t-cheerio-lemon: 218, 237, 34;
 }
-
 
 .first-tab {
   margin: 1vh;  
@@ -48,7 +52,6 @@
   align-items: center;
   flex-basis: auto;
   /* justify-content: auto; */
-  
   padding-left: 5vh;
   padding-right: 5vh;
   height: 15vh;
@@ -67,6 +70,7 @@
   align-items: center;
   justify-content: space-around;
 }
+
 .header-left > * {
   /* Spacing of things in the left part of the header */
   padding: .5vh;
@@ -99,6 +103,12 @@
   align-items: right;
   justify-content: flex;
   gap: .5vh;
+}
+
+.bubble-link {
+  color: black;
+  font-size: medium;
+  text-decoration: none;
 }
 
 a {
@@ -135,7 +145,21 @@ div.links > a:hover::before {
   overflow: hidden;
 }
 
-/* .leftSide {} */
+.leftSide {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: calc(100%/3);
+}
+
+[class^="item"]{
+  position: relative;
+  border: #3f3d4a solid 2px;
+  width: 80%;
+  height: 100px;
+}
 
 .landing-page {
   position: relative;
@@ -150,7 +174,6 @@ div.links > a:hover::before {
   left: calc(1*100vw/3);
   /* top: 10%; */
   width: 0px;
-  gap: 10vh;
   height: 80vh;
   border: var(--t-grey) solid 1px;
 }
@@ -158,7 +181,7 @@ div.links > a:hover::before {
 .rightSide {
   position: relative;
   left: calc(1*100vw/3);
-  width: calc(2*100vw/3);
+  width: calc((196.5*100vw/300));
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -172,7 +195,8 @@ div.links > a:hover::before {
   justify-content: center;
   top: 25%;
   border-radius: 50%;
-  --outer-circle-circumference: 35vh;
+  /* --outer-circle-circumference: 35vh; */
+  --outer-circle-circumference: 15em;
   height: var(--outer-circle-circumference);
   width: var(--outer-circle-circumference);
   background-color: #8EC469;
@@ -182,8 +206,8 @@ div.links > a:hover::before {
   position: relative;
   border-radius: 50%;
   background-color: #fff;
-  height: 70%;
-  width: 70%;
+  height: 60%;
+  width: 60%;
 }
 
 .bubbles {
@@ -192,7 +216,8 @@ div.links > a:hover::before {
   display: flex;
   flex-direction: row;
   --circumference-bubbles: calc(var(--outer-circle-circumference)*2);
-  /* border-radius: 50%; */
+  border-radius: 50%;
+  --translation: calc(var(--outer-circle-circumference)* 110 / 100);
   height: var(--circumference-bubbles);
   width: var(--circumference-bubbles);
 }
@@ -201,58 +226,56 @@ div.links > a:hover::before {
   position: relative;
   display: flex;
   background-color: var(--t-grey);
-  /* top: 50vh; */
 }
 
 @keyframes myOrbit1 {
   from {
-    transform: rotate(0deg) translateX(calc(var(--outer-circle-circumference)*2/3)) rotate(0deg);
+    transform: rotate(0deg) translateX(var(--translation)) rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg) translateX(calc(var(--outer-circle-circumference)*2/3)) rotate(-360deg);
+    transform: rotate(360deg) translateX(var(--translation)) rotate(-360deg);
   }
 }
 
 @keyframes myOrbit2 {
   from {
-    transform: rotate(90deg) translateX(calc(var(--outer-circle-circumference)*2/3)) rotate(-90deg);
+    transform: rotate(90deg) translateX(var(--translation)) rotate(-90deg);
   }
 
   to {
-    transform: rotate(450deg) translateX(calc(var(--outer-circle-circumference)*2/3)) rotate(-450deg);
+    transform: rotate(450deg) translateX(var(--translation)) rotate(-450deg);
   }
 }
 
 @keyframes myOrbit3 {
   from {
-    transform: rotate(180deg) translateX(calc(var(--outer-circle-circumference)*2/3)) rotate(-180deg);
+    transform: rotate(180deg) translateX(var(--translation)) rotate(-180deg);
   }
 
   to {
-    transform: rotate(540deg) translateX(calc(var(--outer-circle-circumference)*2/3)) rotate(-540deg);
+    transform: rotate(540deg) translateX(var(--translation)) rotate(-540deg);
   }
 }
 
 @keyframes myOrbit4 {
   from {
-    transform: rotate(270deg) translateX(calc(var(--outer-circle-circumference)*2/3)) rotate(-270deg);
+    transform: rotate(270deg) translateX(var(--translation)) rotate(-270deg);
   }
 
   to {
-    transform: rotate(630deg) translateX(calc(var(--outer-circle-circumference)*2/3)) rotate(-630deg);
+    transform: rotate(630deg) translateX(var(--translation)) rotate(-630deg);
   }
 }
 
-[class$="-bubble"]{
+[class$="-bubble"] {
     position: absolute;
-    /* position: inherit; */
     display: flex;
     flex-direction: column;
-    top: calc((var(--circumference-bubbles)/2) - (var(--outer-circle-circumference)/4));
-    left: calc((var(--circumference-bubbles)/2) - (var(--outer-circle-circumference)/4));
-    border-style: solid;
-    border-width: 25px;
+    top: calc((var(--circumference-bubbles) * 85 / 100 ));
+    left: calc((var(--circumference-bubbles) * 85 / 100 ));
+    outline-style: solid;
+    outline-width: 30px;/* border-width: 30px; */
     background-color: white;
     font-size: small;
     text-align: center;
@@ -264,50 +287,46 @@ div.links > a:hover::before {
 }
 
 .project2-bubble{
-  z-index: 1;
-  border-color: rgba(var(--t-blue), 1.0);
+  outline-color: rgba(var(--t-blue), 1.0);
   animation: myOrbit1 20s linear infinite;
 }
 
 .project1-bubble {
-  z-index: 2;
-  border-color: rgba(var(--t-blue), 0.7);
+  outline-color: rgba(var(--t-blue), 0.8);
   animation: myOrbit2 20s linear infinite;
 }
 
 .linkedin-bubble {
-  z-index: 3;
-  border-color: rgba(var(--t-blue), 1.0);
+  outline-color: rgba(var(--t-blue), 1.0);
   animation: myOrbit3 20s linear infinite;
 }
 
 .github-bubble {
-  z-index: 4;
-  border-color: rgba(var(--t-blue), 0.7);
+  outline-color: rgba(var(--t-blue), 0.8);
   animation: myOrbit4 20s linear infinite;
 }
 
 .bubbles:hover * {
-  animation: none;
-  /* animation-play-state: paused; */
+  /* animation: none; */
+  animation-play-state: paused;
 }
 
 .github-bubble:hover {
-  border: rgba(var(--t-cheerio-red), 1.0) 25px solid;
+  outline: rgba(var(--t-cheerio-red), 1.0) 30px solid;
   cursor: pointer;
 }
 
 .linkedin-bubble:hover {
-  border: rgba(var(--t-cheerio-red), 1.0) 25px solid;
+  outline: rgba(var(--t-cheerio-lemon), 1.0) 30px solid;
   cursor: pointer;
 }
 
 .project1-bubble:hover {
-  border: rgba(var(--t-cheerio-red), 1.0) 25px solid;
+  outline: rgba(var(--t-cheerio-orange), 1.0) 30px solid;
   cursor: pointer;
 }
 
 .project2-bubble:hover {
-  border: rgba(var(--t-cheerio-red), 1.0) 25px solid;
+  outline: rgba(var(--t-cheerio-purple), 1.0) 30px solid;
   cursor: pointer;
 }
