@@ -332,15 +332,16 @@ div.links > a:hover::before {
   background-color: rgba(var(--t-blue), 0.8);
 }
 
-.project2-bubble{
-  /* outline-color: rgba(var(--t-blue), 1.0); */
+.project1-bubble {
+  /* outline-color: rgba(var(--t-blue), 0.8); */
   animation: myOrbit1 20s linear infinite;
 }
 
-.project1-bubble {
-  /* outline-color: rgba(var(--t-blue), 0.8); */
+.project2-bubble{
+  /* outline-color: rgba(var(--t-blue), 1.0); */
   animation: myOrbit2 20s linear infinite;
 }
+
 
 .linkedin-bubble {
   /* outline-color: rgba(var(--t-blue), 1.0); */
