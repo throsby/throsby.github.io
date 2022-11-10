@@ -225,10 +225,10 @@ div.links > a:hover::before {
   justify-content: center;
   top: 25%;
   border-radius: 50%;
-  /* --outer-circle-circumference: 35vh; */
-  --outer-circle-circumference: 15em;
-  height: var(--outer-circle-circumference);
-  width: var(--outer-circle-circumference);
+  /* --big-green-cheerio-diameter: 35vh; */
+  --big-green-cheerio-diameter: 15em;
+  height: var(--big-green-cheerio-diameter);
+  width: var(--big-green-cheerio-diameter);
   background-color: #8EC469;
 }
 
@@ -243,11 +243,11 @@ div.links > a:hover::before {
 .bubbles {
   /* In order for inner-circle and bubbles to be on the same center, bubbles must be position: absolute */
   position: absolute;
-  --circumference-bubbles: calc(var(--outer-circle-circumference));
+  --diameter-bubbles: calc(var(--big-green-cheerio-diameter));
   border-radius: 50%;
-  --translation: calc(var(--outer-circle-circumference)* 110 / 100);
-  height: var(--circumference-bubbles);
-  width: var(--circumference-bubbles);
+  --translation: calc(var(--big-green-cheerio-diameter)* 110 / 100);
+  height: var(--diameter-bubbles);
+  width: var(--diameter-bubbles);
 }
 
 @keyframes myOrbit1 {
@@ -307,10 +307,10 @@ div.links > a:hover::before {
     font-size: small;
     text-align: center;
     justify-content: center;
-    --bubble-circumference: calc(6/7*(var(--outer-circle-circumference)));
+    --link-cheerio-outer-radius: calc(6/7*(var(--big-green-cheerio-diameter)));
     border-radius: 100%;
-    width: var(--bubble-circumference);
-    height: var(--bubble-circumference);
+    width: var(--link-cheerio-outer-radius);
+    height: var(--link-cheerio-outer-radius);
 }
 
 [class$="-bubble"]:nth-child(even) {
@@ -343,27 +343,26 @@ div.links > a:hover::before {
 
 .bubbles:hover * {
   animation-play-state: paused;
-  /* animation-iteration-count: 1; */
   animation-fill-mode: forwards;
 }
 
 .github-bubble:hover {
-  outline: rgba(var(--t-cheerio-red), 1.0) 30px solid;
+  background-color: rgba(var(--t-cheerio-red), 1.0);
   cursor: pointer;
 }
 
 .linkedin-bubble:hover {
-  outline: rgba(var(--t-cheerio-lemon), 1.0) 30px solid;
+  background-color: rgba(var(--t-cheerio-lemon), 1.0);
   cursor: pointer;
 }
 
 .project1-bubble:hover {
-  outline: rgba(var(--t-cheerio-orange), 1.0) 30px solid;
+  background-color: rgba(var(--t-cheerio-orange), 1.0);
   cursor: pointer;
 }
 
 .project2-bubble:hover {
-  outline: rgba(var(--t-cheerio-purple), 1.0) 30px solid;
+  background-color: rgba(var(--t-cheerio-purple), 1.0);
   cursor: pointer;
 }
 
