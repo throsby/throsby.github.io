@@ -306,11 +306,22 @@ div.links > a:hover::before {
     background-color: white;
     font-size: small;
     text-align: center;
+    align-items: center;
     justify-content: center;
     --link-cheerio-outer-radius: calc(6/7*(var(--big-green-cheerio-diameter)));
     border-radius: 100%;
     width: var(--link-cheerio-outer-radius);
     height: var(--link-cheerio-outer-radius);
+}
+
+.bubble-inner {
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(0.3 * var(--link-cheerio-outer-radius));
+  height: calc(0.3 * var(--link-cheerio-outer-radius));
 }
 
 [class$="-bubble"]:nth-child(even) {
