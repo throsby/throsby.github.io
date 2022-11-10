@@ -43,12 +43,12 @@ function LandingPage(){
                         </div>
                         <div className="project2-bubble">
                             <div className="bubble-inner">
-                                <Link className="bubble-link" to={""}>Project 2 Link</Link>
+                                <a className="bubble-link" href="https://www.linkedin.com/in/throsbywells/" target="_blank">LinkedIn Link</a>                                
                             </div>
                         </div>
                         <div className="linkedin-bubble">
                             <div className="bubble-inner">
-                                <a className="bubble-link" href="https://www.linkedin.com/in/throsbywells/" target="_blank">LinkedIn Link</a>
+                                    <Link className="bubble-link" to={""}>Project 2 Link</Link>
                             </div>
                         </div>
                     </div>
