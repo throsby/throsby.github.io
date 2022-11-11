@@ -20,7 +20,7 @@ function LandingPage(){
                     <p>I'll do anything, I'll become a champion flamenco dancer for it</p>
                 </div>
                 <div className="item-4">
-                    <p></p>
+                    <p>Phenom at the Banjo</p>
                     <p>Throsby will win the Steve Martin prize for Banjo excellence only by working hard at it. Also by buying and playing the banjo. Actually mostly that.</p>
                 </div>
             </div>

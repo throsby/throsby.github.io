@@ -11,19 +11,26 @@ function Header(){
     }
 
     return(
-        <div className="header" >
-        <div className="header-left">
-        <Link className="header-logo" to={"/"}><img className="logo" src="quad-cheerio-red.png"/></Link>
-        <div className="my-name">Throsby Wells</div>
-        </div>
-        <div className="header-right">
-            {linksVisible && <div className="links"><Link className="header-about" to={"/about"}>About</Link>
-            <Link className="header-home" to={"/"}>Home</Link>
-            <Link className="header-contact" to={"/contact"}>Contact</Link></div>}
-            <div className="header-button">
-                <div onClick={handleClick}><img className="hamburger" src="hamburger.png"/></div>
+        <div className="header">
+            <div className="header-left">
+                <Link className="header-logo" to={"/"}>
+                    <img className="logo" src="quad-cheerio-red.png"/>
+                </Link>
+                <div className="my-name">Throsby Wells</div>
+                
             </div>
-        </div>
+            
+            <div className="header-right">
+                {linksVisible && <div className="links"><Link className="header-about" to={"/about"}>About</Link>
+                <Link className="header-home" to={"/"}>Home</Link>
+                <Link className="header-contact" to={"/contact"}>Contact</Link></div>}
+                
+                <img className="hire_me" src="hire_me_plz!.png"></img>
+
+                {/* <div className="header-button">
+                    <div onClick={handleClick}><img className="hamburger" src="hamburger.png"/></div>
+                </div> */}
+            </div>
     </div>)
 }
 

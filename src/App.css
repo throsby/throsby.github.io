@@ -24,7 +24,6 @@
   background-color: rgba(var(--t-border-green), .05);
 }
 
-
 .first-tab {
   margin: 1vh;  
   background-color: var(--t-yellow);
@@ -50,19 +49,31 @@
   height: 75px;
 }
 
+.my-name {
+  /* display: inline; */
+  
+}
+
+.hire_me {
+  position: relative;
+  /* left: 50%; */
+  top: 10%;
+  height: 100px;
+}
+
 .header {
   display: flex;
   position: relative;
   flex-direction: row;
   align-items: center;
-  flex-basis: auto;
+  /* flex-basis: auto; */
   /* justify-content: auto; */
-  padding-left: 5vh;
-  padding-right: 5vh;
-  height: 15vh;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  height: 120px;
   border-bottom: .3vh solid var(--t-black);
   background-color: rgba(var(--t-border-green),1);
-  border-bottom-right-radius: 5vh;
+  white-space: nowrap;
   /* z-index: -2; */
   overflow: hidden;
   text-decoration: none;
@@ -333,23 +344,19 @@ div.links > a:hover::before {
 }
 
 .project1-bubble {
-  /* outline-color: rgba(var(--t-blue), 0.8); */
   animation: myOrbit1 20s linear infinite;
 }
 
 .project2-bubble{
-  /* outline-color: rgba(var(--t-blue), 1.0); */
   animation: myOrbit2 20s linear infinite;
 }
 
 
 .linkedin-bubble {
-  /* outline-color: rgba(var(--t-blue), 1.0); */
   animation: myOrbit3 20s linear infinite;
 }
 
 .github-bubble {
-  /* outline-color: rgba(var(--t-blue), 0.8); */
   animation: myOrbit4 20s linear infinite;
 }
 
