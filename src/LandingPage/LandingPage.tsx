@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ResumeItem from "../ResumeItem/ResumeItem";
 
 function LandingPage(){
 
@@ -23,6 +24,7 @@ function LandingPage(){
                     <p>Phenom at the Banjo</p>
                     <p>Throsby will win the Steve Martin prize for Banjo excellence only by working hard at it. Also by buying and playing the banjo. Actually mostly that.</p>
                 </div>
+                <ResumeItem times="timey times" title="Title" body="body"/>
             </div>
         </div>
         <div className="vl"/>
