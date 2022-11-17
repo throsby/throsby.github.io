@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Bubble from "../Bubble/Bubble";
 import ResumeItem from "../ResumeItem/ResumeItem";
 
 function LandingPage(){
@@ -32,27 +33,19 @@ function LandingPage(){
             <div className="outer-circle">
                 <div className="inner-circle"/>
                 <div className="bubbles">
-                    <div className="bubble-outer">
-                        <div className="github-bubble">
-                            <div className="bubble-inner">
-                                <a className="bubble-link" href="https://www.github.com/throsby" target="_blank">Github Link</a>
-                            </div>
-                        </div>
-                        <div className="project1-bubble">
-                            <div className="bubble-inner">
-                                <Link className="bubble-link" to={""}>Project 1 Link</Link>
-                            </div>
-                        </div>
-                        <div className="project2-bubble">
-                            <div className="bubble-inner">
-                                <a className="bubble-link" href="https://www.linkedin.com/in/throsbywells/" target="_blank">LinkedIn Link</a>                                
-                            </div>
-                        </div>
-                        <div className="linkedin-bubble">
-                            <div className="bubble-inner">
-                                    <Link className="bubble-link" to={""}>Project 2 Link</Link>
-                            </div>
-                        </div>
+                    <div className="bubble-outer">                        
+                        <Bubble className={"github-bubble"} linkTo={"https://www.github.com/throsby"} newWindow={true}>
+                            Github Link
+                        </Bubble>
+                        <Bubble className={"project1-bubble"} linkTo={"/about"} newWindow={false}>
+                            Project 1 Link
+                        </Bubble>
+                        <Bubble className={"linkedin-bubble"} linkTo={"https://www.linkedin.com/in/throsbywells/"} newWindow={true}>
+                            LinkedIn Link
+                        </Bubble>
+                        <Bubble className={"project2-bubble"} linkTo={"/about"} newWindow={false}>
+                            Project 2 Link
+                        </Bubble>
                     </div>
                 
                 </div>

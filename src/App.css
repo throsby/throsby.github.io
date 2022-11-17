@@ -158,12 +158,9 @@ div.links > a:hover::before {
 
 .landing-page {
   position: relative;
-  /* display: flex; */
   display: grid;
   grid-template-columns: calc(1*100vw/3) 0px calc(2*100vw/3);
   height: 100vh;
-  /* flex-direction: row; */
-  /* align-items: center; */
 }
 
 .leftSide {
@@ -173,7 +170,7 @@ div.links > a:hover::before {
   align-items: center;
 
   top: 2em;
-  height: 100vh;
+  /* height: 100vh; */
   /* gap: 2em; */
   /* left: max(1vw, 7em); */
   /* width: 0em; */
@@ -343,12 +340,11 @@ div.links > a:hover::before {
 }
 
 .project2-bubble{
-  animation: myOrbit2 20s linear infinite;
+  animation: myOrbit3 20s linear infinite;
 }
 
-
 .linkedin-bubble {
-  animation: myOrbit3 20s linear infinite;
+  animation: myOrbit2 20s linear infinite;
 }
 
 .github-bubble {
