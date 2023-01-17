@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function About(){
 
     return(<>
-        {/* <div className="about">About</div> */}
+
         
         <div>
             <p>I'm working to become a Junior Software Engineer working on problems that work toward a future that is more equal equitable and just.</p>

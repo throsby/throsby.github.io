@@ -25,7 +25,8 @@ function LandingPage(){
                     <p>Phenom at the Banjo</p>
                     <p>Throsby will win the Steve Martin prize for Banjo excellence only by working hard at it. Also by buying and playing the banjo. Actually mostly that.</p>
                 </div>
-                <ResumeItem times="timey times" title="Title" body="body"/>
+                <ResumeItem times="timey times" title="Title" body="body" />
+                <ResumeItem times="timey times" title="Title" body="body" />
             </div>
         </div>
         <div className="vl"/>
@@ -33,17 +34,17 @@ function LandingPage(){
             <div className="outer-circle">
                 <div className="inner-circle"/>
                 <div className="bubbles">
-                    <div className="bubble-outer">                        
-                        <Bubble className={"github-bubble"} linkTo={"https://www.github.com/throsby"} newWindow={true}>
+                    <div className="bubble-outer">
+                        <Bubble className={"github-bubble"} linkTo={"https://www.github.com/throsby"} openNewWindowOnClick={true}>
                             Github Link
                         </Bubble>
-                        <Bubble className={"project1-bubble"} linkTo={"/about"} newWindow={false}>
+                        <Bubble className={"project1-bubble"} linkTo={"/about"} openNewWindowOnClick={false}>
                             Project 1 Link
                         </Bubble>
-                        <Bubble className={"linkedin-bubble"} linkTo={"https://www.linkedin.com/in/throsbywells/"} newWindow={true}>
+                        <Bubble className={"linkedin-bubble"} linkTo={"https://www.linkedin.com/in/throsbywells/"} openNewWindowOnClick={true}>
                             LinkedIn Link
                         </Bubble>
-                        <Bubble className={"project2-bubble"} linkTo={"/about"} newWindow={false}>
+                        <Bubble className={"project2-bubble"} linkTo={"/about"} openNewWindowOnClick={false}>
                             Project 2 Link
                         </Bubble>
                     </div>

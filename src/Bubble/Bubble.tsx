@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 type Props = {
     className: string;
     linkTo: string;
-    newWindow: boolean;
+    openNewWindowOnClick: boolean;
     children: string;
 }
 
-function Bubble({className, linkTo, newWindow, children}: Props) {
+function Bubble({className, linkTo, openNewWindowOnClick, children}: Props) {
     return (
     <div className={className}>
         <div className="bubble-inner">
-                {!!newWindow  ? <a className="bubble-link" href={linkTo} target="_blank">{children}</a> 
+                {!!openNewWindowOnClick  ? <a className="bubble-link" href={linkTo} target="_blank">{children}</a> 
                     : <Link className="bubble-link" to={"/about"}>{children}</Link>}
         </div>
     </div>);  
