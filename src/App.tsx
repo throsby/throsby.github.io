@@ -7,7 +7,7 @@ import {
   Route
 } from "react-router-dom";
 import LandingPage from './LandingPage/LandingPage';
-import About from './About/About.tsx/About';
+import About from './About/About';
 import Footer from './Footer';
 
 
