@@ -20,7 +20,7 @@
   },
   "homepage": "https://throsby.dev",
   "scripts": {
-    "predeploy": "yarn build && echo 'throsby.dev' > ./build/CNAME",
+    "predeploy": "yarn build && echo 'throsby.dev\nwww.throsby.dev' > ./build/CNAME",
     "deploy": "gh-pages -b github-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
