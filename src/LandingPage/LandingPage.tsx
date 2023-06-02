@@ -38,8 +38,8 @@ function LandingPage(){
                         <Bubble className={"github-bubble"} linkTo={"https://www.github.com/throsby"} openNewWindowOnClick={true}>
                             Github Link
                         </Bubble>
-                        <Bubble className={"project1-bubble"} linkTo={"/about"} openNewWindowOnClick={false}>
-                            Project 1 Link
+                        <Bubble className={"project1-bubble"} linkTo={"https://ruby.throsby.dev"} openNewWindowOnClick={false}>
+                            Orto Immaginario
                         </Bubble>
                         <Bubble className={"linkedin-bubble"} linkTo={"https://www.linkedin.com/in/throsbywells/"} openNewWindowOnClick={true}>
                             LinkedIn Link
