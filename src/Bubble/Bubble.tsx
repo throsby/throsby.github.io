@@ -14,8 +14,8 @@ function Bubble({className, linkTo, openNewWindowOnClick, children}: Props) {
     return (
     <div className={className}>
         <div className="bubble-inner">
-                {!!openNewWindowOnClick ? <Link className="bubble-link" to={linkTo} target="_blank">{children}</Link> 
-                    : <Link className="bubble-link" to={destination}>{children}</Link>}
+                {!!openNewWindowOnClick ? <a className="bubble-link" href={linkTo} target="_blank">{children}</a> 
+                    : <a className="bubble-link" href={destination}>{children}</a>}
         </div>
     </div>);  
 };
