@@ -1,7 +1,7 @@
 type Props = {
     times: string;
     title: string;
-    body: string;
+    body: string | JSX.Element;
 }
 
 function ResumeItem({times, title, body}: Props) {
@@ -11,7 +11,7 @@ function ResumeItem({times, title, body}: Props) {
 
     return(
         <>
-            <div className="item-4">
+            <div className="item-">
                 <p>{times}</p>
                 <p>{title}</p>
                 <p>{body}</p>

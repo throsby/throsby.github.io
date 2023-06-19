@@ -160,7 +160,7 @@ div.links > a:hover::before {
   position: relative;
   display: grid;
   grid-template-columns: calc(1*100vw/3) 0px calc(2*100vw/3);
-  height: 100vh;
+  height: 100rvh;
 }
 
 .leftSide {
@@ -187,7 +187,7 @@ div.links > a:hover::before {
   /* flex-direction: column; */
   border: #3f3d4a solid 2px;
   border-radius: 1em;
-  width: calc(0.8 * 100vw/3);
+  width: calc(0.9 * 100vw/3);
   /* height: 5em; */
   margin-top: .5em;
   margin-left: .5em;
@@ -380,6 +380,7 @@ div.links > a:hover::before {
   position: relative;
   display: flex;
   background-color: var(--t-grey);
+  bottom: 0;
 }
 /* 
 @media screen and (max-width: 800px) {

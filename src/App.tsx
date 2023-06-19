@@ -9,11 +9,17 @@ import {
 import LandingPage from './LandingPage/LandingPage';
 import About from './About/About';
 import Footer from './Footer';
-
+import { useEffect } from 'react';
 
 
 function App() {
-
+  useEffect(() => {
+    async function fetchGreenhouses() {
+      let req = await fetch(`https://lingering-wood-1850.fly.dev/greenhouses`)
+      let res = await req.json()
+    }
+    fetchGreenhouses()
+  }, [])
 
   return (
     <>
@@ -25,7 +31,7 @@ function App() {
         <Route path="/contact" element={<Contact />}/>
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
