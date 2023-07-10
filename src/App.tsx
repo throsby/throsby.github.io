@@ -12,6 +12,7 @@ import Footer from './Footer';
 import { useEffect } from 'react';
 
 
+
 function App() {
   useEffect(() => {
     async function fetchGreenhouses() {
@@ -29,8 +30,9 @@ function App() {
         <Route path="/" element={<LandingPage />}/>
         <Route path="/about" element={<About />}/>
         <Route path="/contact" element={<Contact />}/>
+        
       </Routes>
-
+      
       {/* <Footer /> */}
     </>
   );
