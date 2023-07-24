@@ -16,7 +16,7 @@ import { useEffect } from 'react';
 function App() {
   useEffect(() => {
     async function fetchGreenhouses() {
-      let req = await fetch(`https://lingering-wood-1850.fly.dev/greenhouses`)
+      let req = await fetch(`https://cool-lake-5286.fly.dev/greenhouses`)
       let res = await req.json()
     }
     fetchGreenhouses()
