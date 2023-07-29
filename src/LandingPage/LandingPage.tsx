@@ -26,6 +26,7 @@ function LandingPage(){
         </> as JSX.Element
 
     let peacecorpsJobDesc = <>
+        <em>Ag Economics Extension Volunteer</em>
         <br />- Educated 200+ community members on public health initiatives via educational seminars and literature
         <br />- Established community loan and savings bank as a capital development project
         <br />- Facilitated community education, worked dynamically to solve problems working with stakeholders
@@ -40,7 +41,7 @@ function LandingPage(){
             <div className="short-form-resume">
                 <div className="resume-heading">Short Form Resume</div>
                 <ResumeItem times="October 2020 - March  2023" title="Health Safety Coordinator @ Lionsgate Entertainment" body={lionsgateJobDesc} />
-                <ResumeItem times="February 2017 - March 2020" title="Agriculture Extension Volunteer @ Peace Corps" body={peacecorpsJobDesc} />
+                <ResumeItem times="February 2017 - March 2020" title="Agriculture Volunteer @ Peace Corps" body={peacecorpsJobDesc} />
                 <ResumeItem times="November 2016 - November 2017" title="Americorps Volunteer & Project Assistant @ Department of Citizen Services Buffalo City Hall" body={americorpsJobDesc} />
             </div>
         </div>

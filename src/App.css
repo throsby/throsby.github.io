@@ -116,27 +116,17 @@
   gap: .5vh;
 }
 
-.bubble-link {
-  color: black;
-  font-size: medium;
-  text-decoration: none;
-}
 
-a {
-  color: var(--t-black);
-  text-decoration: none;
-}
-
-.links > a {
+/* .links > a {
   position: relative;
   padding: .75vh;
   border-radius: 1vh;
   border: .25vh solid var(--t-black);
-}
-
+} */
+/* 
 a[class*="header-"]::before {
   content: "";
-  /* border-radius: 1vh; */
+  border-radius: 1vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -147,14 +137,15 @@ a[class*="header-"]::before {
   z-index: -1;
   transform: translateX(-100%);
 }
-
+ */
+/* 
 div.links > a:hover::before {
   transform: translateX(0);
 }
 
 [class|=header]{
   overflow: hidden;
-}
+} */
 
 .landing-page {
   position: relative;
@@ -247,8 +238,8 @@ div.links > a:hover::before {
   /* In order for inner-circle and bubbles to be on the same center, bubbles must be position: absolute */
   position: absolute;
   --diameter-bubbles: calc(var(--big-green-cheerio-diameter));
-  border-radius: 50%;
-  --translation: calc(var(--big-green-cheerio-diameter)* 110 / 100);
+  border-radius: 100%;
+  --translation: calc(var(--big-green-cheerio-diameter) * 110 / 100);
   height: var(--diameter-bubbles);
   width: var(--diameter-bubbles);
 }
@@ -302,19 +293,35 @@ div.links > a:hover::before {
   height: 100%;
 }
 
+
 [class$="-bubble"] {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    font-size: small;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    --link-cheerio-outer-radius: calc(6/7*(var(--big-green-cheerio-diameter)));
-    border-radius: 100%;
-    width: var(--link-cheerio-outer-radius);
-    height: var(--link-cheerio-outer-radius);
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  font-size: small;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  --link-cheerio-outer-radius: calc(6/7*(var(--big-green-cheerio-diameter)));
+  border-radius: 100%;
+  /* border: calc(0.22 * var(--link-cheerio-outer-radius)) solid; */
+  /* border: calc(0.22 * var(--link-cheerio-outer-radius)) solid salmon; */
+  width: var(--link-cheerio-outer-radius);
+  height: var(--link-cheerio-outer-radius);
+}
+
+[class$="-bubble"] > a {
+  display: block;
+  position: relative;
+  border-radius: 100%;
+  color: var(--t-black);
+  text-decoration: none;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  font-size: medium;
 }
 
 .bubble-inner {
@@ -323,23 +330,26 @@ div.links > a:hover::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* border: calc(0.41 * 0.3 * var(--link-cheerio-outer-radius)) solid salmon; */
   width: calc(0.3 * var(--link-cheerio-outer-radius));
   height: calc(0.3 * var(--link-cheerio-outer-radius));
 }
 
-[class$="-bubble"]:nth-child(even) {
-  background-color: rgba(var(--t-blue), 1.0);
+[class$="-bubble"]:nth-child(even) > a {
+  border: calc(0.22 * var(--link-cheerio-outer-radius)) solid;
+  border-color: rgba(var(--t-blue), 1.0);
 }
 
-[class$="-bubble"]:nth-child(odd) {
-  background-color: rgba(var(--t-blue), 0.8);
+[class$="-bubble"]:nth-child(odd) > a {
+  border: calc(0.22 * var(--link-cheerio-outer-radius)) solid;
+  border-color: rgba(var(--t-blue), 0.8);
 }
 
 .project1-bubble {
   animation: myOrbit1 20s linear infinite;
 }
 
-.project2-bubble{
+.project2-bubble {
   animation: myOrbit3 20s linear infinite;
 }
 
@@ -356,23 +366,23 @@ div.links > a:hover::before {
   animation-fill-mode: forwards;
 }
 
-.github-bubble:hover {
-  background-color: rgba(var(--t-cheerio-red), 1.0);
+.github-bubble:hover > a {
+  border-color: rgba(var(--t-cheerio-red), 1.0);
   cursor: pointer;
 }
 
-.linkedin-bubble:hover {
-  background-color: rgba(var(--t-cheerio-lemon), 1.0);
+.linkedin-bubble:hover > a {
+  border-color: rgba(var(--t-cheerio-lemon), 1.0);
   cursor: pointer;
 }
 
-.project1-bubble:hover {
-  background-color: rgba(var(--t-cheerio-orange), 1.0);
+.project1-bubble:hover > a{
+  border-color: rgba(var(--t-cheerio-orange), 1.0);
   cursor: pointer;
 }
 
-.project2-bubble:hover {
-  background-color: rgba(var(--t-cheerio-purple), 1.0);
+.project2-bubble:hover > a{
+  border-color: rgba(var(--t-cheerio-purple), 1.0);
   cursor: pointer;
 }
 
