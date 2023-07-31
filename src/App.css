@@ -302,19 +302,17 @@ div.links > a:hover::before {
   background-color: white;
   font-size: small;
   text-align: center;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   --link-cheerio-outer-radius: calc(6/7*(var(--big-green-cheerio-diameter)));
   border-radius: 100%;
-  /* border: calc(0.22 * var(--link-cheerio-outer-radius)) solid; */
-  /* border: calc(0.22 * var(--link-cheerio-outer-radius)) solid salmon; */
   width: var(--link-cheerio-outer-radius);
   height: var(--link-cheerio-outer-radius);
 }
 
 [class$="-bubble"] > a {
-  display: block;
   position: relative;
+  display: flex;
   border-radius: 100%;
   color: var(--t-black);
   text-decoration: none;
@@ -322,6 +320,7 @@ div.links > a:hover::before {
   height: 100%;
   width: 100%;
   font-size: medium;
+  align-items: center;
 }
 
 .bubble-inner {
