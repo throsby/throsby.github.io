@@ -117,7 +117,9 @@
 }
 
 
-/* .links > a {
+/* 
+Most of the below code was for the old styling of the site.
+.links > a {
   position: relative;
   padding: .75vh;
   border-radius: 1vh;
