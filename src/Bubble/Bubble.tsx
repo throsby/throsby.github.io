@@ -9,11 +9,12 @@ type Props = {
 
 function Bubble({className, linkTo, openNewWindowOnClick, children}: Props) {
 
-    let destination = linkTo.startsWith("https") ? linkTo : "/about";
+    let destination = linkTo.startsWith("https") ? linkTo : "https://throsby.dev/about";
+    console.log(className, destination)
 
     return (
     <div className={className}>
-                {!!openNewWindowOnClick ? <a className="bubble-link" href={linkTo} target="_blank">{children}</a> 
+            {!!openNewWindowOnClick ? <a className="bubble-link" href={linkTo} target="_blank" rel="noreferrer">{children}</a> 
                     : <a className="bubble-link" href={destination}>{children}</a>}
     </div>);  
 };
