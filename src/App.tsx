@@ -4,7 +4,8 @@ import Contact from './Contact/Contact';
 import Landing from './Landing';
 import {
   Routes,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
 import LandingPage from './LandingPage/LandingPage';
 import About from './About/About';
@@ -29,15 +30,21 @@ function App() {
   return (
     <>
       <Header/>
-          
+
       <Routes>
         <Route path="/" element={<LandingPage />}/>
-        <Route path="/about" element={<About />}/>
+        <Route path="about" element={<About />}/>
         <Route path="/contact" element={<Contact />}/>
-        <Route path="*" element={<Oops />}/>
-
+        <Route path="/*" element={<Oops />}/>
       </Routes>
       
+      <>      
+        <Link to={"/contact"}>Contact</Link>
+          <br />
+        <Link to={"/about"}>About</Link>
+          <br />
+        <Link to={"/"}>Root</Link>
+      </>
       {/* <Footer /> */}
     </>
   );
