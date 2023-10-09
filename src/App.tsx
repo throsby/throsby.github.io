@@ -4,8 +4,7 @@ import Contact from './Contact/Contact';
 import Landing from './Landing';
 import {
   Routes,
-  Route,
-  useLocation
+  Route
 } from "react-router-dom";
 import LandingPage from './LandingPage/LandingPage';
 import About from './About/About';
@@ -16,7 +15,7 @@ import Oops from './Oops/Oops';
 
 
 function App() {
-  console.log("useLocation:", useLocation().pathname)
+  // console.log("window.location:", window.location)
 
   useEffect(() => {
     async function fetchGreenhouses() {

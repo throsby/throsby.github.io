@@ -10,13 +10,17 @@ function Oops() {
                 navigate('/oops')
         }
     }, )
-    
 
 
     return (
         <>
-            <h1>404!</h1>
-            <p>Send me an email at inquiry[at]throsby[.]dev</p>
+            <h1>This page doesn't exist!</h1>
+            <p>
+                <br />
+                If you think I need help, you're probably right!
+                <br/>
+                Let me know if it's worth me knowing about! bugreport[@]throsby[.]dev
+            </p>
         </>
     )
 }
