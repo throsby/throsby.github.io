@@ -10,6 +10,7 @@ import ReactGA from "react-ga4";
 
 ReactGA.initialize( "G-9CKWN2Z0ZD" );
 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
