@@ -17,6 +17,7 @@ import Oops from './Oops/Oops';
 
 function App() {
   // console.log("window.location:", window.location)
+  
 
   useEffect(() => {
     async function fetchGreenhouses() {
