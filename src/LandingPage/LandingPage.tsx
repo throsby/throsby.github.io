@@ -60,8 +60,8 @@ function LandingPage(){
                         <Bubble className={"linkedin-bubble"} linkTo={"https://www.linkedin.com/in/throsbywells/"} openNewWindowOnClick={true}>
                             LinkedIn Link
                         </Bubble>
-                        <Bubble className={"project2-bubble"} linkTo={"/about"} openNewWindowOnClick={false}>
-                            Project 2 Link
+                        <Bubble className={"project2-bubble"} linkTo={"https://www.throsby.dev/Phase2Project/"} openNewWindowOnClick={false}>
+                            HotsPot
                         </Bubble>
                     </div>
                 
