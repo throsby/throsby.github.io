@@ -1,36 +1,33 @@
 import './App.css';
 import Header from './Header';
-import Contact from './Contact/Contact';
-import Landing from './Landing';
 import { 
   Routes,
   Route,
   Link
 } from "react-router-dom";
-import LandingPage from './LandingPage/LandingPage';
-import About from './About/About';
 import Footer from './Footer';
 import { useEffect } from 'react';
-import Oops from './Oops/Oops';
-import { datadogRum } from '@datadog/browser-rum'
+import { matchRoutes, useLocation, useRoutes, RouteMatch } from 'react-router-dom';
+import  { routes }  from './SiteRoutes/SiteRoutes';
+import { datadogRum } from "@datadog/browser-rum";
 
+// import { RumRoute as Route } from '@Datadog/rum-react-integration';
 
 function App() {
-  // console.log("window.location:", window.location)
-  
-  datadogRum.init({
-    applicationId: '<DATADOG_APPLICATION_ID>',
-    clientToken: '<DATADOG_CLIENT_TOKEN>',
-    site: '<DATADOG_SITE>',
-    //  service: 'my-web-application',
-    //  env: 'production',
-    //  version: '1.0.0',
-    sessionSampleRate: 100,
-    sessionReplaySampleRate: 100,
-    trackResources: true,
-    trackLongTasks: true,
-    trackUserInteractions: true,
-  });
+  let allRoutes = useRoutes(routes);
+
+  let location = useLocation();
+
+  // const routeComponents = routes.map(({path, component}, key) => <Route exact path={path} component={component} key={key} />);
+
+
+  useEffect(() => {
+    const routeMatches = matchRoutes(routes, location.pathname);
+    const viewName = routeMatches && computeViewName(routeMatches);
+    if (viewName) {
+      datadogRum.startView({name: viewName});
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     async function fetchGreenhouses() {
@@ -45,12 +42,7 @@ function App() {
     <>
       <Header/>
 
-      <Routes>
-        <Route path="" element={<LandingPage />}/>
-        <Route path="about" element={<About />}/>
-        <Route path="contact" element={<Contact />}/>
-        <Route path="*" element={<Oops />}/>
-      </Routes>
+      { allRoutes }
       
       <>      
         <Link to={"/contact"}>Contact</Link>
@@ -65,3 +57,25 @@ function App() {
 }
 
 export default App;
+
+function computeViewName(routeMatches: RouteMatch[]) {
+  let viewName = "";
+  for (let index = 0; index < routeMatches.length; index++) {
+    const routeMatch = routeMatches[index];
+    const path = routeMatch.route.path;
+    // Skip pathless routes
+    if (!path) {
+      continue;
+    }
+
+    if (path.startsWith("/")) {
+     // Handle absolute child route paths
+      viewName = path;
+    } else {
+     // Handle route paths ending with "/"
+      viewName += viewName.endsWith("/") ? path : `/${path}`;
+    }
+  }
+
+  return viewName || '/';
+}

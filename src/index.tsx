@@ -6,9 +6,29 @@ import reportWebVitals from './reportWebVitals';
 import {
   HashRouter as Router
 } from "react-router-dom";
+import { datadogRum } from '@datadog/browser-rum'
+import '@datadog/browser-rum/bundle/datadog-rum'
 // import ReactGA from "react-ga4";
 
 // ReactGA.initialize( "G-9CKWN2Z0ZD" );
+
+datadogRum.init({
+  applicationId: '7afe80a1-4d05-4de1-a760-528adecee07c',
+  clientToken: 'pub7158f44b40394e6c02065d6f14bbdde8',
+  site: 'us5.datadoghq.com',
+  service: 'throsbyspersonalsite',
+  env: 'prod',
+  // Specify a version number to identify the deployed version of your application in Datadog 
+  // version: '1.0.0', 
+  sessionSampleRate: 100,
+  sessionReplaySampleRate: 100,
+  trackUserInteractions: true,
+  trackResources: true,
+  trackLongTasks: true,
+  defaultPrivacyLevel: 'mask-user-input',
+  trackViewsManually: true,
+});
+
 
 
 
