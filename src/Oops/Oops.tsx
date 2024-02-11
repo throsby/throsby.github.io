@@ -5,11 +5,11 @@ function Oops() {
     const navigate = useNavigate()
     const location = useLocation()
     
-    useEffect(() => {
-        if (location.pathname !== "/oops"){
-                navigate('/oops')
-        }
-    }, )
+    // useEffect(() => {
+    //     if (location.pathname !== "/oops"){
+    //             navigate('/oops')
+    //     }
+    // }, )
 
     return (
         <>

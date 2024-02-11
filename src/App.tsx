@@ -2,7 +2,7 @@ import './App.css';
 import Header from './Header';
 import Contact from './Contact/Contact';
 import Landing from './Landing';
-import {
+import { 
   Routes,
   Route,
   Link
@@ -12,12 +12,25 @@ import About from './About/About';
 import Footer from './Footer';
 import { useEffect } from 'react';
 import Oops from './Oops/Oops';
-
+import { datadogRum } from '@datadog/browser-rum'
 
 
 function App() {
   // console.log("window.location:", window.location)
   
+  datadogRum.init({
+    applicationId: '<DATADOG_APPLICATION_ID>',
+    clientToken: '<DATADOG_CLIENT_TOKEN>',
+    site: '<DATADOG_SITE>',
+    //  service: 'my-web-application',
+    //  env: 'production',
+    //  version: '1.0.0',
+    sessionSampleRate: 100,
+    sessionReplaySampleRate: 100,
+    trackResources: true,
+    trackLongTasks: true,
+    trackUserInteractions: true,
+  });
 
   useEffect(() => {
     async function fetchGreenhouses() {
@@ -33,9 +46,9 @@ function App() {
       <Header/>
 
       <Routes>
-        <Route path="/" element={<LandingPage />}/>
+        <Route path="" element={<LandingPage />}/>
         <Route path="about" element={<About />}/>
-        <Route path="/contact" element={<Contact />}/>
+        <Route path="contact" element={<Contact />}/>
         <Route path="*" element={<Oops />}/>
       </Routes>
       
@@ -46,7 +59,7 @@ function App() {
           <br />
         <Link to={"/"}>Root</Link>
       </>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
