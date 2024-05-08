@@ -7,7 +7,7 @@ type Props = {
 function ResumeItem({times, title, body}: Props) {
 
 
-    console.log(times, title, body)
+    // console.log(times, title, body)
 
     return(
         <>

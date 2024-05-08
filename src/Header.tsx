@@ -6,7 +6,7 @@ function Header(){
 
     function handleClick(event : React.MouseEvent<HTMLInputElement>): void {
         setLinksVisible(!linksVisible)
-        console.log(event)
+        // console.log(event)
         return 
     }
 

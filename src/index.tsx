@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { datadogRum } from '@datadog/browser-rum'
 import '@datadog/browser-rum/bundle/datadog-rum'
+
 // import ReactGA from "react-ga4";
 
 // ReactGA.initialize( "G-9CKWN2Z0ZD" );
@@ -17,7 +18,7 @@ datadogRum.init({
   clientToken: 'pub7158f44b40394e6c02065d6f14bbdde8',
   site: 'us5.datadoghq.com',
   service: 'throsbyspersonalsite',
-  env: 'prod',
+  env: process.env.NODE_ENV,
   // Specify a version number to identify the deployed version of your application in Datadog 
   // version: '1.0.0', 
   sessionSampleRate: 100,
@@ -28,9 +29,6 @@ datadogRum.init({
   defaultPrivacyLevel: 'mask-user-input',
   trackViewsManually: true,
 });
-
-
-
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

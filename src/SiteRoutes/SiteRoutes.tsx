@@ -12,15 +12,3 @@ export const routes: RouteObject[] = [
     { path: "contact", element: <Contact /> },
     { path: "*", element: <Oops /> },
 ]
-
-// function SiteRoutes(){
-
-//     return (<>
-//                 <Route path="" element={<LandingPage />}/>
-//                 <Route path="about" element={<About />}/>
-//                 <Route path="contact" element={<Contact />}/>
-//                 <Route path="*" element={<Oops />}/>
-//             </>)
-// }
-
-// export default SiteRoutes;

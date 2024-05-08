@@ -18,9 +18,6 @@ function App() {
 
   let location = useLocation();
 
-  // const routeComponents = routes.map(({path, component}, key) => <Route exact path={path} component={component} key={key} />);
-
-
   useEffect(() => {
     const routeMatches = matchRoutes(routes, location.pathname);
     const viewName = routeMatches && computeViewName(routeMatches);
@@ -41,6 +38,7 @@ function App() {
   return (
     <>
       <Header/>
+
 
       { allRoutes }
       
