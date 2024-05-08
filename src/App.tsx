@@ -38,14 +38,14 @@ function App() {
         <Route path="/*" element={<Oops />}/>
       </Routes>
       
-      <>      
+      <div style={{display: 'flex', gap: 10 }}>      
         <Link to={"/contact"}>Contact</Link>
           <br />
         <Link to={"/about"}>About</Link>
           <br />
         <Link to={"/"}>Root</Link>
-      </>
-      {/* <Footer /> */}
+      </div>
+      <Footer />
     </>
   );
 }
